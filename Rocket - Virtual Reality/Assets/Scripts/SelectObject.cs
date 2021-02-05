@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectObject : MonoBehaviour
 {
     private float speed = 100;
-
+    public GameObject halo;
     public GameObject player;
 
     // Start is called before the first frame update
@@ -19,15 +19,17 @@ public class SelectObject : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            int layerMask = 0 << 10;
             RaycastHit hit;
             if (Physics.Raycast(player.transform.position + Camera.main.transform.forward, Camera.main.transform.forward, out hit))
             {
-                hit.collider.gameObject.GetComponent<Renderer>().material.color = UnityEngine.Random.ColorHSV();
-                Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider.gameObject.layer == 8)
+                {
+                    halo.transform.position = hit.collider.gameObject.transform.position;
+                    halo.SetActive(true);
+                }
             }
             else
-                Debug.Log("rien");
+                halo.SetActive(false);
 
         }
     }
