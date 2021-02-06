@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject halo;
 
+    public GameObject coiffe;
+    public GameObject carburant;
+    public GameObject moteur;
+
 
     //private List<RocketPart> rocket;
 
@@ -24,6 +28,11 @@ public class GameManager : MonoBehaviour
 
         Instantiate(player, new Vector3(0, 1, 2), Quaternion.identity);
         Instantiate(halo, new Vector3(0, 0, 0), Quaternion.identity);
+
+
+        Instantiate(coiffe, new Vector3(1, 1, -1), Quaternion.identity);
+        Instantiate(carburant, new Vector3(0, 1, 0), Quaternion.identity);
+        Instantiate(moteur, new Vector3(-1, 1, 1), Quaternion.identity);
 
     }
 
