@@ -8,6 +8,7 @@ public class SelectObject : MonoBehaviour
 
     private float speed = 100;
     private GameObject halo = null;
+    private int carburant = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,12 @@ public class SelectObject : MonoBehaviour
                     halo.SetActive(true);
                 }else if (hit.collider.gameObject.layer == 9){
 
-                    hit.collider.transform.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
+                    while (carburant<10)
+                    {
+                        hit.collider.transform.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * 100);
+                        carburant++;
+                    }
+                    
                 }
             }
             else
