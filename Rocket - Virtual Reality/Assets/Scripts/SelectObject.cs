@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class SelectObject : MonoBehaviour
 {
-    private float speed = 100;
-    public GameObject halo;
     public GameObject player;
+
+    private float speed = 100;
+    private GameObject halo = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject[] HALO = GameObject.FindGameObjectsWithTag("Halo");
+        Debug.Log(HALO.Length);
+        halo = HALO[0];
+        halo.SetActive(false);
     }
 
     // Update is called once per frame
