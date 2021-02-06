@@ -25,13 +25,14 @@ public class CreateRocket : MonoBehaviour
     public void placeObject(GameObject part)
     {
         size += part.transform.localScale.y;
+        Transform parent = this.transform.parent;
 
         if (part.name == "carburant(Clone)")
-            Instantiate(carburant, new Vector3(10,0.1f,10), Quaternion.Euler(0f, 0f, 0f), this.transform);
+            Instantiate(carburant, new Vector3(parent.position.x,0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
         else if (part.name == "coiffe(Clone)")
-            Instantiate(coiffe, new Vector3(10, 0.1f, 10), Quaternion.Euler(0f, 0f, 0f), this.transform);
+            Instantiate(coiffe, new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
         else
-            Instantiate(moteur, new Vector3(10, 0.1f, 10), Quaternion.Euler(0f, 0f, 0f), this.transform);
+            Instantiate(moteur, new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
 
         this.transform.position += new Vector3(0, part.transform.localScale.y, 0);
     }

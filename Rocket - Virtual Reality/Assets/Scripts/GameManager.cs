@@ -26,13 +26,13 @@ public class GameManager : MonoBehaviour
             Destroy(dontDestroy);         //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
 
 
-        Instantiate(player, new Vector3(0, 1, 2), Quaternion.identity);
+        Instantiate(player, new Vector3(0, 5.1f, 0), Quaternion.identity);
         Instantiate(halo, new Vector3(0, 0, 0), Quaternion.identity);
 
 
-        Instantiate(coiffe, new Vector3(1, 1, -1), Quaternion.identity);
-        Instantiate(carburant, new Vector3(0, 1, 0), Quaternion.identity);
-        Instantiate(moteur, new Vector3(-1, 1, 1), Quaternion.identity);
+        Instantiate(coiffe, new Vector3(6, 4.3f, 1.2f), Quaternion.Euler(0f, 0f, 45f));
+        Instantiate(carburant, new Vector3(6, 4.3f, 0), Quaternion.Euler(0f, 0f, 45f));
+        Instantiate(moteur, new Vector3(6, 4.3f, -1.2f), Quaternion.Euler(0f, 0f, 45f));
 
     }
 
