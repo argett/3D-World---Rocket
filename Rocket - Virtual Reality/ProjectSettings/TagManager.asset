@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Halo
   - Fire
+  - Reactor
   layers:
   - Default
   - TransparentFX

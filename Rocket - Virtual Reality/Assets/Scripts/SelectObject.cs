@@ -31,14 +31,9 @@ public class SelectObject : MonoBehaviour
                 {
                     halo.transform.position = hit.collider.gameObject.transform.position;
                     halo.SetActive(true);
-                }else if (hit.collider.gameObject.layer == 9){
-
-                    while (carburant<10)
-                    {
-                        hit.collider.transform.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * 100);
-                        carburant++;
-                    }
-                    
+                }else if(hit.collider.gameObject.layer == 9)
+                {
+                    hit.collider.gameObject.GetComponent<Decolage>().decolage();
                 }
             }
             else
