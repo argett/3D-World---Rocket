@@ -30,6 +30,9 @@ public class SelectObject : MonoBehaviour
                 {
                     halo.transform.position = hit.collider.gameObject.transform.position;
                     halo.SetActive(true);
+                }else if (hit.collider.gameObject.layer == 9){
+
+                    hit.collider.transform.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
                 }
             }
             else
