@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CreateRocket : MonoBehaviour
 {
-    public GameObject coiffe;
-    public GameObject carburant;
-    public GameObject moteur;
+    public GameObject[] coiffe;
+    public GameObject[] carburant;
+    public GameObject[] moteur;
 
     private float size;
 
@@ -27,13 +27,27 @@ public class CreateRocket : MonoBehaviour
         size += part.transform.localScale.y;
         Transform parent = this.transform.parent;
 
-        if (part.name == "carburant(Clone)")
-            Instantiate(carburant, new Vector3(parent.position.x,0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
-        else if (part.name == "coiffe(Clone)")
-            Instantiate(coiffe, new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
-        else
-            Instantiate(moteur, new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
+        if (part.name == "Tank_1(Clone)")
+            Instantiate(carburant[0], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
+        else if(part.name == "Tank_2(Clone)")
+            Instantiate(carburant[1], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
+        else if (part.name == "Tank_3(Clone)")
+            Instantiate(carburant[2], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, 0f), this.transform);
 
+        else if (part.name == "Coiffe_1(Clone)")
+            Instantiate(coiffe[0], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(180f, 0f, 0f), this.transform);
+        else if (part.name == "Coiffe_2(Clone)")
+            Instantiate(coiffe[1], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(180f, 0f, 0f), this.transform);
+        else if (part.name == "Coiffe_3(Clone)")
+            Instantiate(coiffe[2], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(180f, 0f, 0f), this.transform);
+        
+        else if (part.name == "Engine_1(Clone)")
+            Instantiate(moteur[0], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, -90f), this.transform);
+        else if (part.name == "Engine_2(Clone)")
+            Instantiate(moteur[1], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, -90f), this.transform);
+        else
+            Instantiate(moteur[2], new Vector3(parent.position.x, 0.1f, parent.position.z), Quaternion.Euler(0f, 0f, -90f), this.transform);
+        
         this.transform.position += new Vector3(0, part.transform.localScale.y, 0);
     }
 }

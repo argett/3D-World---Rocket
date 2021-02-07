@@ -164,10 +164,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dd85301f2b82148a3edd59a85f86e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coiffe: {fileID: 5536342151052901990, guid: e73e168d88ff39b468cff43bd5038233, type: 3}
-  carburant: {fileID: 4966869936834023530, guid: 611f732fe436e0c458f51640f70a84b7,
-    type: 3}
-  moteur: {fileID: 4079059267941730883, guid: 424235f491bc1dd4595342c59cbc9f77, type: 3}
+  coiffe:
+  - {fileID: 6239152061685658934, guid: 93ab96853c992af4d970c8cccd0899b6, type: 3}
+  - {fileID: 23016823644601018, guid: 7f71b0fb8389dd048bc274ecbc6418d7, type: 3}
+  - {fileID: 5149828733110032669, guid: bfb00b9d5953b6343b50cb2ac38730f3, type: 3}
+  carburant:
+  - {fileID: 6634595839084177983, guid: 28fc4895acdc5ca4bae4e5fbfbaef179, type: 3}
+  - {fileID: 9087387814454263298, guid: 6702fb6f1da992f4681b9cbd5560aecf, type: 3}
+  - {fileID: 3545649298231538295, guid: 99daa6adc52d43d4dbf359660258c338, type: 3}
+  moteur:
+  - {fileID: 2845181811678246055, guid: ebf5da1d3cdf72c46ad8ee5d637667f0, type: 3}
+  - {fileID: 8278659162013833005, guid: 98b41f027917ab7409b98f242eb18fac, type: 3}
+  - {fileID: 6819122882001279604, guid: e53ce0bb971e37746b967d7e162dc49c, type: 3}
 --- !u!1 &360818644
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,10 +483,18 @@ MonoBehaviour:
   dontDestroy: {fileID: 1176341162}
   player: {fileID: 7073900762188610942, guid: bc397298a0c34694bbf2cefc9ad89ade, type: 3}
   halo: {fileID: 2802437420712635946, guid: 2af68697fa9d7c14391bb51684f5d6d5, type: 3}
-  coiffe: {fileID: 5536342151052901990, guid: e73e168d88ff39b468cff43bd5038233, type: 3}
-  carburant: {fileID: 4966869936834023530, guid: 611f732fe436e0c458f51640f70a84b7,
-    type: 3}
-  moteur: {fileID: 4079059267941730883, guid: 424235f491bc1dd4595342c59cbc9f77, type: 3}
+  coiffe:
+  - {fileID: 6239152061685658934, guid: 93ab96853c992af4d970c8cccd0899b6, type: 3}
+  - {fileID: 23016823644601018, guid: 7f71b0fb8389dd048bc274ecbc6418d7, type: 3}
+  - {fileID: 5149828733110032669, guid: bfb00b9d5953b6343b50cb2ac38730f3, type: 3}
+  carburant:
+  - {fileID: 6634595839084177983, guid: 28fc4895acdc5ca4bae4e5fbfbaef179, type: 3}
+  - {fileID: 9087387814454263298, guid: 6702fb6f1da992f4681b9cbd5560aecf, type: 3}
+  - {fileID: 3545649298231538295, guid: 99daa6adc52d43d4dbf359660258c338, type: 3}
+  moteur:
+  - {fileID: 2845181811678246055, guid: ebf5da1d3cdf72c46ad8ee5d637667f0, type: 3}
+  - {fileID: 8278659162013833005, guid: 98b41f027917ab7409b98f242eb18fac, type: 3}
+  - {fileID: 6819122882001279604, guid: e53ce0bb971e37746b967d7e162dc49c, type: 3}
 --- !u!4 &1176341165
 Transform:
   m_ObjectHideFlags: 0
