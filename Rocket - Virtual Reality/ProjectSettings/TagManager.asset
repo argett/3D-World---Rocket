@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Halo
   - Rocket
+  - Button
   layers:
   - Default
   - TransparentFX
