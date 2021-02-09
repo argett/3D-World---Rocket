@@ -20,8 +20,8 @@ public class PresentRocketParts : MonoBehaviour
     void Start()
     {
         rocketParts_displayed_one = Instantiate(coiffe[0], new Vector3(6, 4.3f, -1.2f), Quaternion.Euler(0f, 0f, -180f));
-        rocketParts_displayed_two = Instantiate(coiffe[1], new Vector3(6, 4.3f, 0), Quaternion.Euler(0f, 0f, -180f));
-        rocketParts_displayed_three = Instantiate(coiffe[2], new Vector3(6, 4.3f, 1.2f), Quaternion.Euler(0f, 0f, -180f));
+        rocketParts_displayed_two = Instantiate(carburant[1], new Vector3(6, 4.3f, 0), Quaternion.Euler(0f, 0f, -180f));
+        rocketParts_displayed_three = Instantiate(moteur[2], new Vector3(6, 4.3f, 1.2f), Quaternion.Euler(0f, 0f, -180f));
 
         // to set at least 1 stage
         another_stage = true;
@@ -45,9 +45,7 @@ public class PresentRocketParts : MonoBehaviour
 
     public void nextTurn()
     {
-        isTankTurn = false;
-        isEngineTurn = true;
-        placeEngine();
+        another_stage = false;
     }
 
     private IEnumerator placeTank()
@@ -56,9 +54,9 @@ public class PresentRocketParts : MonoBehaviour
         Destroy(rocketParts_displayed_two);
         Destroy(rocketParts_displayed_three); 
         
-        rocketParts_displayed_one = Instantiate(carburant[0], new Vector3(6, 4.5f, -1.2f), Quaternion.Euler(0f, 0f, -45f));
-        rocketParts_displayed_two = Instantiate(carburant[1], new Vector3(6, 4.5f, 0), Quaternion.Euler(0f, 0f, -45f));
-        rocketParts_displayed_three = Instantiate(carburant[2], new Vector3(6, 4.5f, 1.2f), Quaternion.Euler(0f, 0f, -45f));
+        rocketParts_displayed_one = Instantiate(carburant[0], new Vector3(6, 4.5f, -1.2f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_two = Instantiate(carburant[1], new Vector3(6, 4.5f, 0), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_three = Instantiate(carburant[2], new Vector3(6, 4.5f, 1.2f), Quaternion.Euler(0f, 0f, 0f));
 
 
         while (another_stage)
@@ -69,6 +67,8 @@ public class PresentRocketParts : MonoBehaviour
 
         isTankTurn = false;
         isEngineTurn = true;
+
+        placeEngine();
     }
 
     private void placeEngine()
@@ -77,9 +77,9 @@ public class PresentRocketParts : MonoBehaviour
         Destroy(rocketParts_displayed_two);
         Destroy(rocketParts_displayed_three);
 
-        rocketParts_displayed_one = Instantiate(moteur[0], new Vector3(6, 4.7f, -1.2f), Quaternion.Euler(0f, 0f, -45f));
-        rocketParts_displayed_two = Instantiate(moteur[1], new Vector3(6, 4.7f, 0), Quaternion.Euler(0f, 0f, -45f));
-        rocketParts_displayed_three = Instantiate(moteur[2], new Vector3(6, 4.7f, 1.2f), Quaternion.Euler(0f, 0f, -45f));
+        rocketParts_displayed_one = Instantiate(moteur[0], new Vector3(6, 4.7f, -1.2f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_two = Instantiate(moteur[1], new Vector3(6, 4.7f, 0), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_three = Instantiate(moteur[2], new Vector3(6, 4.7f, 1.2f), Quaternion.Euler(0f, 0f, 0f));
         
         isEngineTurn = false;
     }
