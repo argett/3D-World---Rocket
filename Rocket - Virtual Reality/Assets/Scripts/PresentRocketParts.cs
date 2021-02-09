@@ -20,8 +20,8 @@ public class PresentRocketParts : MonoBehaviour
     void Start()
     {
         rocketParts_displayed_one = Instantiate(coiffe[0], new Vector3(6, 4.3f, -1.2f), Quaternion.Euler(0f, 0f, -180f));
-        rocketParts_displayed_two = Instantiate(carburant[1], new Vector3(6, 4.3f, 0), Quaternion.Euler(0f, 0f, -180f));
-        rocketParts_displayed_three = Instantiate(moteur[2], new Vector3(6, 4.3f, 1.2f), Quaternion.Euler(0f, 0f, -180f));
+        rocketParts_displayed_two = Instantiate(coiffe[1], new Vector3(6, 4.3f, 0), Quaternion.Euler(0f, 0f, -180f));
+        rocketParts_displayed_three = Instantiate(coiffe[2], new Vector3(6, 4.3f, 1.2f), Quaternion.Euler(0f, 0f, -180f));
 
         // to set at least 1 stage
         another_stage = true;

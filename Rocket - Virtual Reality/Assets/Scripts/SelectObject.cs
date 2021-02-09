@@ -39,7 +39,7 @@ public class SelectObject : MonoBehaviour
                     rocket_build.GetComponent<CreateRocket>().placeObject(hit.collider.gameObject);
                     // change the items
                     GameObject[] button = GameObject.FindGameObjectsWithTag("GameController");
-                    //button[0].GetComponent<PresentRocketParts>().pieceSelected();
+                    button[0].GetComponent<PresentRocketParts>().pieceSelected();
                 }
             }
             else if(hit.collider.gameObject.tag == "Button")
