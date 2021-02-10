@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Decolage : MonoBehaviour
 {
-    public int carburant = 100;
+    public int carburant = 5;
+    private float dureecombustion;
     public GameObject rocket, flame;
     // Start is called before the first frame update
     void Start()
     {
-        
+
         flame.SetActive(true);
 
     }
@@ -19,32 +20,36 @@ public class Decolage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void decolage()
     {
-
+        dureecombustion = Time.time + carburant;
         GameObject reactor = GameObject.FindGameObjectsWithTag("Reactor")[0];
         rocket = GameObject.FindGameObjectsWithTag("Rocket")[0];
         Instantiate(flame, reactor.transform.position, Quaternion.Euler(-90f, 0f, 0f), reactor.transform);
         rocket.GetComponent<Launch_Camera>().Creat_Cam();
-        StartCoroutine(Destroy_Flame());
-        
+        StartCoroutine(Forces());
+
     }
 
-    private IEnumerator Destroy_Flame()
+    private IEnumerator Forces()
     {
-        GameObject reactor = GameObject.FindGameObjectsWithTag("Reactor")[0];
-        while (carburant > 0)
+        rocket = GameObject.FindGameObjectsWithTag("Rocket")[0];
+        while (dureecombustion > Time.time)
         {
-            Thread.Sleep(1000);
-            reactor.GetComponent<Rigidbody>().AddForce(transform.up * 1000);
-            carburant--;
+            rocket.GetComponent<Rigidbody>().AddForce(transform.up * 10);
             yield return null;
 
         }
-        carburant = 100;
+
         Destroy(GameObject.FindGameObjectsWithTag("Fire")[0]);
+
     }
+
+    
+
 }
+
+    
