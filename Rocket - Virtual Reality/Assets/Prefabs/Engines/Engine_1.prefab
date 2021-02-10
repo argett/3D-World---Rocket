@@ -108,5 +108,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuel: 0
   weight: 2
-  power: 10
+  power: 3
   crew: 0
