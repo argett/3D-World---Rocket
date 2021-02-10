@@ -9,12 +9,12 @@ public class CreateRocket : MonoBehaviour
     public GameObject[] carburant;
     public GameObject[] moteur;
 
-    private float size;
+    private bool stage_completed;
 
     // Start is called before the first frame update
     void Start()
     {
-        size = 0;
+        stage_completed = false;
     }
 
     // Update is called once per frame
@@ -35,7 +35,6 @@ public class CreateRocket : MonoBehaviour
             objSize = part.GetComponent<MeshRenderer>().bounds.size.y; // we take its eight
 
         rocket.transform.position += new Vector3(0, objSize, 0);
-        size += objSize;
         /* ------------------------- */
 
         Transform parent = rocket.transform.parent;
@@ -53,25 +52,41 @@ public class CreateRocket : MonoBehaviour
                 break;
             case "Tank_1(Clone)":
                 Instantiate(carburant[0], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                stage_completed = false;
                 break;
             case "Tank_2(Clone)":
                 Instantiate(carburant[1], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                stage_completed = false;
                 break;
             case "Tank_3(Clone)":
                 Instantiate(carburant[2], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                stage_completed = false;
                 break;
             case "Engine_1(Clone)":
                 Instantiate(moteur[0], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                stage_completed = true ;
                 break;
             case "Engine_2(Clone)":
                 Instantiate(moteur[1], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                stage_completed = true;
                 break;
             case "Engine_3(Clone)":
                 Instantiate(moteur[2], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                stage_completed = true;
                 break;
             default:
                 Debug.Log("Problem selecting a rocket part in script CreateRocke");
                 break;
         }        
+    }
+
+    public bool isStageCompleted()
+    {
+        return stage_completed;
+    }
+
+    public void stageCreation()
+    {
+        stage_completed = false;
     }
 }

@@ -10,6 +10,7 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        stages = 1;
         selected = false;
     }
 
