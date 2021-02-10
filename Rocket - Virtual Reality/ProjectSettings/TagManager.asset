@@ -7,6 +7,7 @@ TagManager:
   - Halo
   - Rocket
   - Button
+  - Rocket_pad
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - 
   - Rocket_parts
-  - 
+  - User_Interraction
   - 
   - 
   - 
