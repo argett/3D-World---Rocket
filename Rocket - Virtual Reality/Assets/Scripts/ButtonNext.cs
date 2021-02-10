@@ -19,6 +19,6 @@ public class ButtonNext : MonoBehaviour
     public void pushOnIt()
     {
         GameObject[] button = GameObject.FindGameObjectsWithTag("GameController");
-        button[0].GetComponent<PresentRocketParts>().nextTurn();
+        button[0].GetComponent<PresentRocketParts>().nextStage();
     }
 }

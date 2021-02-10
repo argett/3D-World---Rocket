@@ -38,17 +38,24 @@ public class PresentRocketParts : MonoBehaviour
     public void pieceSelected()
     {
         if (isTankTurn)
-            StartCoroutine(placeTank());
+            placeTank();
         else if (isEngineTurn)
             placeEngine();
+        else
+        {
+            Destroy(rocketParts_displayed_one);
+            Destroy(rocketParts_displayed_two);
+            Destroy(rocketParts_displayed_three);
+        }
     }
 
-    public void nextTurn()
+    public void nextStage()
     {
-        another_stage = false;
+        isTankTurn = true;
+        pieceSelected();
     }
 
-    private IEnumerator placeTank()
+    private void placeTank()
     {
         Destroy(rocketParts_displayed_one);
         Destroy(rocketParts_displayed_two);
@@ -58,17 +65,8 @@ public class PresentRocketParts : MonoBehaviour
         rocketParts_displayed_two = Instantiate(carburant[1], new Vector3(6, 4.5f, 0), Quaternion.Euler(0f, 0f, 0f));
         rocketParts_displayed_three = Instantiate(carburant[2], new Vector3(6, 4.5f, 1.2f), Quaternion.Euler(0f, 0f, 0f));
 
-
-        while (another_stage)
-        {
-            // we wait to finish the selection of how much tank we want
-            yield return null;
-        }
-
         isTankTurn = false;
         isEngineTurn = true;
-
-        placeEngine();
     }
 
     private void placeEngine()
