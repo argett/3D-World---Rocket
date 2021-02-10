@@ -8,7 +8,7 @@ public class SelectObject : MonoBehaviour
 
     private float speed = 100;
     private GameObject halo = null;
-    private GameObject rocket_build;
+    public GameObject rocket_build;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class SelectObject : MonoBehaviour
         halo = HALO[0];
         halo.SetActive(false);
 
-        GameObject[] ROCKET = GameObject.FindGameObjectsWithTag("Rocket");
+        GameObject[] ROCKET = GameObject.FindGameObjectsWithTag("Rocket_pad");
         rocket_build = ROCKET[0];
     }
 

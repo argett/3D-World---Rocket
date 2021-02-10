@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketPart : MonoBehaviour
+public class Rocket : MonoBehaviour
 {
+    private int stages;
+
     private bool selected;
     // Start is called before the first frame update
     void Start()
@@ -15,5 +17,15 @@ public class RocketPart : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void addStage()
+    {
+        stages++;
+    }
+
+    public int getStage()
+    {
+        return stages;
     }
 }

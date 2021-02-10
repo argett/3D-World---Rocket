@@ -394,5 +394,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a2b06ecabaa1a40a4c0be8a04fc25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  halo: {fileID: 2802437420712635946, guid: 2af68697fa9d7c14391bb51684f5d6d5, type: 3}
   player: {fileID: 7073900762188610942}
+  rocket_build: {fileID: 0}
