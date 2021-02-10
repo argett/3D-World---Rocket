@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3498212344796633109}
   - component: {fileID: 2091561105175565548}
   - component: {fileID: 5606561774370270079}
+  - component: {fileID: 2135400336175977413}
   m_Layer: 8
   m_Name: Engine_1
   m_TagString: Untagged
@@ -93,3 +94,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.6267627, z: 0.6267627}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2135400336175977413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845181811678246055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a83a08dad6d2840a0d7d43d7eeff41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuel: 0
+  weight: 2
+  power: 10
+  crew: 0

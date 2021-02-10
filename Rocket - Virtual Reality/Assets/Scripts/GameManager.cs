@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
     public GameObject halo;
+    public GameObject rocket;
 
 
     //private List<RocketPart> rocket;

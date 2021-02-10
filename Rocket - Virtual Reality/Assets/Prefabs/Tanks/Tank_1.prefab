@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5468189758081664653}
   - component: {fileID: 7379284007883442804}
   - component: {fileID: 2193153731642400668}
+  - component: {fileID: -4882140024217343099}
   m_Layer: 8
   m_Name: Tank_1
   m_TagString: Untagged
@@ -94,3 +95,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4882140024217343099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634595839084177983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a83a08dad6d2840a0d7d43d7eeff41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuel: 5
+  weight: 2
+  power: 0
+  crew: 0

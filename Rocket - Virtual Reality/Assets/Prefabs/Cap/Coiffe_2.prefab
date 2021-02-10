@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23016823644601017}
   - component: {fileID: 23016823644601016}
   - component: {fileID: 23016823644601019}
+  - component: {fileID: -6285258570751683280}
   m_Layer: 8
   m_Name: Coiffe_2
   m_TagString: Untagged
@@ -106,3 +107,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef416cd0745e1474f8655fb7829a18bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6285258570751683280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23016823644601018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a83a08dad6d2840a0d7d43d7eeff41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuel: 0
+  weight: 4
+  power: 0
+  crew: 2

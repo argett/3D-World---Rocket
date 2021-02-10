@@ -856,6 +856,7 @@ MonoBehaviour:
   dontDestroy: {fileID: 1176341162}
   player: {fileID: 7073900762188610942, guid: bc397298a0c34694bbf2cefc9ad89ade, type: 3}
   halo: {fileID: 2802437420712635946, guid: 2af68697fa9d7c14391bb51684f5d6d5, type: 3}
+  rocket: {fileID: 15390078}
 --- !u!4 &1176341165
 Transform:
   m_ObjectHideFlags: 0
