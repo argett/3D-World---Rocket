@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 87571085}
   - component: {fileID: 87571088}
   m_Layer: 9
-  m_Name: Sphere
+  m_Name: Add_stage
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 347869043}
   - component: {fileID: 347869042}
   m_Layer: 9
-  m_Name: Sphere
+  m_Name: Goto_lunch_pad
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
