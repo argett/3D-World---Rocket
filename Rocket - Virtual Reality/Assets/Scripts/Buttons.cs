@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ButtonNext : MonoBehaviour
+public class Buttons : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,7 +14,7 @@ public class ButtonNext : MonoBehaviour
         
     }
 
-    public void pushOnIt()
+    public void Add_stage()
     {
         GameObject rocket = GameObject.FindGameObjectsWithTag("Rocket")[0];
         GameObject rocketPad = GameObject.FindGameObjectsWithTag("Rocket_pad")[0];
@@ -30,9 +28,15 @@ public class ButtonNext : MonoBehaviour
             if (rocket.GetComponent<Rocket>().getStage() < 3)
             {
                 rocket.GetComponent<Rocket>().addStage();
-                GameObject button = GameObject.FindGameObjectsWithTag("GameController")[0];
+                GameObject button = GameObject.FindGameObjectWithTag("GameController");
                 button.GetComponent<PresentRocketParts>().nextStage();
             }
         }
+    }
+
+    public void Goto_lunch_pad()
+    {
+        GameObject gameHandler = GameObject.FindGameObjectWithTag("GameController");
+        gameHandler.GetComponent<ChangeScene>().load_lunch_pad();
     }
 }
