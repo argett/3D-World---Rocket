@@ -46,7 +46,15 @@ public class SelectObject : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    hit.collider.gameObject.GetComponent<ButtonNext>().pushOnIt();
+                    switch (hit.collider.name)
+                    {
+                        case "Add_stage":
+                            hit.collider.gameObject.GetComponent<Buttons>().Add_stage();
+                            break;
+                        case "Goto_lunch_pad":
+                            hit.collider.gameObject.GetComponent<Buttons>().Goto_lunch_pad();
+                            break;
+                    }
                 }
             }
             else
