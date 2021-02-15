@@ -395,4 +395,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7073900762188610942}
-  rocket_build: {fileID: 0}
+  caracteristic_rocket_part_prefab: {fileID: 6400846296628420665, guid: 478abd62eeeacbf4798ce211bec38fae,
+    type: 3}
