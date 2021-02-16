@@ -76,7 +76,10 @@ public class SelectObject : MonoBehaviour
         if(caracteristic_rocket_part == null)
         {
             Vector3 parentPos = obj.gameObject.transform.position;
-            caracteristic_rocket_part = Instantiate(caracteristic_rocket_part_prefab, new Vector3(parentPos.x, parentPos.y, parentPos.z), Quaternion.identity);
+            // make the text face the player
+            caracteristic_rocket_part = Instantiate(caracteristic_rocket_part_prefab, new Vector3(parentPos.x, parentPos.y, parentPos.z), Quaternion.Euler(0f, player.transform.rotation.eulerAngles.y, 0f));
+            // the text is in the rocket part, we translate it to the right
+            caracteristic_rocket_part.transform.Translate(new Vector3(1f, 0, 0));
         }
 
         Caracteristics rocketPart_info = obj.GetComponent<Caracteristics>();
