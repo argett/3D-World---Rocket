@@ -12,19 +12,17 @@ public class PresentRocketParts : MonoBehaviour
     private GameObject rocketParts_displayed_two;
     private GameObject rocketParts_displayed_three;
 
-    private bool another_stage; // 1 stage = (1:n)tank + 1 engine
     private bool isTankTurn;
     private bool isEngineTurn;
 
     // Start is called before the first frame update
     void Start()
     {
-        rocketParts_displayed_one = Instantiate(coiffe[0], new Vector3(-1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, -180f));
-        rocketParts_displayed_two = Instantiate(coiffe[1], new Vector3(0, 6f, 6f), Quaternion.Euler(0f, 0f, -180f));
-        rocketParts_displayed_three = Instantiate(coiffe[2], new Vector3(1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, -180f));
+        rocketParts_displayed_one = Instantiate(coiffe[0], new Vector3(-1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_two = Instantiate(coiffe[1], new Vector3(0, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_three = Instantiate(coiffe[2], new Vector3(1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
 
         // to set at least 1 stage
-        another_stage = true;
         isTankTurn = true;
         isEngineTurn = false;
     }

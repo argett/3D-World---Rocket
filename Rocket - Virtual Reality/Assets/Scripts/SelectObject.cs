@@ -6,17 +6,16 @@ public class SelectObject : MonoBehaviour
 {
     public GameObject player;
     public GameObject caracteristic_rocket_part_prefab;
+    public Material halo_white;
 
     private GameObject rocket_build;
-    private GameObject halo = null;
     private GameObject caracteristic_rocket_part;
+    private GameObject halo = null;
 
     // Start is called before the first frame update
     void Start()
     {
         rocket_build = GameObject.FindGameObjectsWithTag("Rocket_pad")[0];
-        halo = GameObject.FindGameObjectsWithTag("Halo")[0];
-        halo.SetActive(false);
         caracteristic_rocket_part = null;
     }
 
@@ -26,23 +25,15 @@ public class SelectObject : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(player.transform.position + Camera.main.transform.forward, Camera.main.transform.forward, out hit))
         {
-            
-            if (hit.collider.gameObject.layer == 8) //layer Rocket part
+            GameObject collided = hit.collider.gameObject;
+            if (collided.layer == 8) //layer Rocket part
             {
-
-
-                halo.transform.position = hit.collider.gameObject.transform.position;
-                halo.SetActive(true);
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    choseObject(hit.collider);
-                }
-                displayCaracteristics(hit.collider);
+                destroyHalo();
+                createHalo(collided);
             }
-            else if (hit.collider.gameObject.layer == 9) //layer button, UI
+            else if (collided.layer == 9) //layer button, UI
             {
-                if (hit.collider.gameObject.tag == "Button")
+                if (collided.tag == "Button")
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -50,24 +41,25 @@ public class SelectObject : MonoBehaviour
                     }
                 }
             }
+            else if(collided.layer == 10) // halo for selectionnable object
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    choseObject(hit.collider.transform.parent.gameObject);
+                }
+
+                displayCaracteristics(hit.collider);
+            }
             else
             {
-                halo.SetActive(false);
-                if(caracteristic_rocket_part != null)
-                {
-                    Destroy(caracteristic_rocket_part);
-                    caracteristic_rocket_part = null;
-                }
+                destroyHalo();
+                destroyCaracteristics();
             }
         }
         else
         {
-            halo.SetActive(false);
-            if (caracteristic_rocket_part != null)
-            {
-                Destroy(caracteristic_rocket_part);
-                caracteristic_rocket_part = null;
-            }
+            destroyHalo();
+            destroyCaracteristics();
         }
     }
 
@@ -101,12 +93,11 @@ public class SelectObject : MonoBehaviour
         caracteristic_rocket_part.GetComponent<TextMesh>().text = caract;
     }
 
-    private void choseObject(Collider obj)
+    private void choseObject(GameObject obj)
     {
-        rocket_build.GetComponent<CreateRocket>().placeObject(obj.gameObject);
+        rocket_build.GetComponent<CreateRocket>().placeObject(obj);
         // change the items
-        GameObject button = GameObject.FindGameObjectsWithTag("GameController")[0];
-        button.GetComponent<PresentRocketParts>().pieceSelected();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<PresentRocketParts>().pieceSelected();
     }
 
     private void checkButtonType(Collider obj)
@@ -120,5 +111,30 @@ public class SelectObject : MonoBehaviour
                 obj.gameObject.GetComponent<Buttons>().Goto_lunch_pad();
                 break;
         }
+    }
+
+    private void destroyCaracteristics()
+    {
+        if (caracteristic_rocket_part != null)
+        {
+            Destroy(caracteristic_rocket_part);
+            caracteristic_rocket_part = null;
+        }
+    }
+
+    private void destroyHalo()
+    {
+        if (halo != null)
+        {
+            Destroy(halo);
+            halo = null;
+        }
+    }
+    private void createHalo(GameObject rocketPart)
+    {
+        halo = Instantiate(rocketPart, rocketPart.transform.position, Quaternion.identity, rocketPart.transform);
+        halo.layer = 10;
+        halo.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+        halo.GetComponent<Renderer>().material = halo_white;
     }
 }

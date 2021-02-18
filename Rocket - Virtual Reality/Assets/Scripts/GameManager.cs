@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public GameObject dontDestroy;
 
     public GameObject player;
-    public GameObject halo;
     public GameObject rocket;
 
 
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
 
 
         Instantiate(player, new Vector3(0, 5.1f, 0), Quaternion.identity);
-        Instantiate(halo, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
 

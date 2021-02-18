@@ -397,3 +397,4 @@ MonoBehaviour:
   player: {fileID: 7073900762188610942}
   caracteristic_rocket_part_prefab: {fileID: 6400846296628420665, guid: 478abd62eeeacbf4798ce211bec38fae,
     type: 3}
+  halo_white: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
