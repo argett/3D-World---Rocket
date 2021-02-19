@@ -2,6 +2,8 @@
 
 public class Buttons : MonoBehaviour
 {
+    public GameObject winglet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,6 @@ public class Buttons : MonoBehaviour
 
     public void Place_winglet()
     {
-        ;
+        Instantiate(winglet, new Vector3(-10, 1.5f, 0), Quaternion.identity);
     }
 }

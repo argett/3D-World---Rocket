@@ -10,10 +10,12 @@ public class SelectObject : MonoBehaviour
     private GameObject rocket_build;
     private GameObject caracteristic_rocket_part;
     private GameObject halo = null;
+    private GameObject hand;
 
     // Start is called before the first frame update
     void Start()
     {
+        hand = this.transform.Find("FirstPersonCharacter").gameObject.transform.Find("Hand").gameObject; // Hand is a child of this
         rocket_build = GameObject.FindGameObjectsWithTag("Rocket_pad")[0];
         caracteristic_rocket_part = null;
     }
@@ -22,6 +24,9 @@ public class SelectObject : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
+
+        hand.GetComponent<Renderer>().material.color = UnityEngine.Color.gray;
+
         if (Physics.Raycast(player.transform.position + Camera.main.transform.forward, Camera.main.transform.forward, out hit))
         {
             GameObject collided = hit.collider.gameObject;
@@ -31,7 +36,7 @@ public class SelectObject : MonoBehaviour
                 createHalo(collided);
                 Thread.Sleep(10);       // to avoid the creation of mutliples halo's layer because the instantiation takes more than 1 frame    
             }
-            else if (collided.layer == 9) //layer button, UI
+            else if (collided.layer == 9) //user interrqction : layer button, UI, winglet
             {
                 if (collided.tag == "Button")
                 {
@@ -39,6 +44,10 @@ public class SelectObject : MonoBehaviour
                     {
                         checkButtonType(hit.collider);
                     }
+                }
+                else if(collided.tag == "Winglet")
+                {
+                    hand.GetComponent<Renderer>().material.color = UnityEngine.Color.red;
                 }
             }
             else if(collided.layer == 10) // halo for selectionnable object
