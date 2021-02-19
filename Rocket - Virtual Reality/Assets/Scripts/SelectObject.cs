@@ -110,6 +110,9 @@ public class SelectObject : MonoBehaviour
             case "Goto_lunch_pad":
                 obj.gameObject.GetComponent<Buttons>().Goto_lunch_pad();
                 break;
+            case "Place_winglet":
+                obj.gameObject.GetComponent<Buttons>().Place_winglet();
+                break;
         }
     }
 

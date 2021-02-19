@@ -39,4 +39,9 @@ public class Buttons : MonoBehaviour
         GameObject gameHandler = GameObject.FindGameObjectWithTag("GameController");
         gameHandler.GetComponent<ChangeScene>().load_lunch_pad();
     }
+
+    public void Place_winglet()
+    {
+        ;
+    }
 }
