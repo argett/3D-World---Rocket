@@ -48,6 +48,11 @@ public class SelectObject : MonoBehaviour
                 else if(collided.tag == "Winglet")
                 {
                     hand.GetComponent<Renderer>().material.color = UnityEngine.Color.red;
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        grabObject();
+                    }
                 }
             }
             else if(collided.layer == 10) // halo for selectionnable object
@@ -142,11 +147,20 @@ public class SelectObject : MonoBehaviour
             halo = null;
         }
     }
+
     private void createHalo(GameObject rocketPart)
     {
         halo = Instantiate(rocketPart, rocketPart.transform.position, Quaternion.identity, rocketPart.transform);
         halo.layer = 10;
         halo.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
         halo.GetComponent<Renderer>().material = halo_white;
+    }
+
+    private void grabObject()
+    {
+        GameObject winglet = GameObject.FindGameObjectWithTag("Winglet");
+        winglet.transform.SetParent(hand.transform);
+        winglet.GetComponent<Rigidbody>().isKinematic = true;
+        winglet.transform.localPosition = new Vector3(0.75f, 0, 1.2f);
     }
 }
