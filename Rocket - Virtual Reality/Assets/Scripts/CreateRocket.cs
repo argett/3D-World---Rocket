@@ -10,6 +10,7 @@ public class CreateRocket : MonoBehaviour
     public GameObject[] moteur;
 
     private bool stage_completed;
+    private GameObject rocketPart_recentlyCreated;
 
     // Start is called before the first frame update
     void Start()
@@ -42,36 +43,45 @@ public class CreateRocket : MonoBehaviour
         switch (part.name)
         {
             case "Coiffe_1(Clone)":
-                Instantiate(coiffe[0], new Vector3(parent.position.x, objSize + rocketPad_heigth, parent.position.z), Quaternion.Euler(0, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(coiffe[0], new Vector3(parent.position.x, objSize + rocketPad_heigth, parent.position.z), Quaternion.Euler(0, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 break;
             case "Coiffe_2(Clone)":
-                Instantiate(coiffe[1], new Vector3(parent.position.x, objSize + rocketPad_heigth, parent.position.z), Quaternion.Euler(0, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(coiffe[1], new Vector3(parent.position.x, objSize + rocketPad_heigth, parent.position.z), Quaternion.Euler(0, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 break;
             case "Coiffe_3(Clone)":
-                Instantiate(coiffe[2], new Vector3(parent.position.x, objSize + rocketPad_heigth, parent.position.z), Quaternion.Euler(0, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(coiffe[2], new Vector3(parent.position.x, objSize + rocketPad_heigth, parent.position.z), Quaternion.Euler(0, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 break;
             case "Tank_1(Clone)":
-                Instantiate(carburant[0], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(carburant[0], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 stage_completed = false;
                 break;
             case "Tank_2(Clone)":
-                Instantiate(carburant[1], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(carburant[1], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 stage_completed = false;
                 break;
             case "Tank_3(Clone)":
-                Instantiate(carburant[2], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(carburant[2], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 0f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 stage_completed = false;
                 break;
             case "Engine_1(Clone)":
-                Instantiate(moteur[0], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(moteur[0], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 stage_completed = true ;
                 break;
             case "Engine_2(Clone)":
-                Instantiate(moteur[1], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(moteur[1], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 stage_completed = true;
                 break;
             case "Engine_3(Clone)":
-                Instantiate(moteur[2], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                rocketPart_recentlyCreated = Instantiate(moteur[2], new Vector3(parent.position.x, objSize/2 + rocketPad_heigth, parent.position.z), Quaternion.Euler(0f, 0f, 90f), rocket.transform);
+                rocketPart_recentlyCreated.layer = 8;
                 stage_completed = true;
                 break;
             default:

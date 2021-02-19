@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Threading;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,10 +26,11 @@ public class SelectObject : MonoBehaviour
         if (Physics.Raycast(player.transform.position + Camera.main.transform.forward, Camera.main.transform.forward, out hit))
         {
             GameObject collided = hit.collider.gameObject;
-            if (collided.layer == 8) //layer Rocket part
+            if (collided.layer == 11) // maybe Rocket part (the selectionnable ones)
             {
                 destroyHalo();
                 createHalo(collided);
+                Thread.Sleep(10);       // to avoid the creation of mutliples halo's layer because the instantiation takes more than 1 frame    
             }
             else if (collided.layer == 9) //layer button, UI
             {
