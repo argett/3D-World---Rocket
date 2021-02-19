@@ -18,9 +18,9 @@ public class PresentRocketParts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rocketParts_displayed_one = Instantiate(coiffe[0], new Vector3(-1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
-        rocketParts_displayed_two = Instantiate(coiffe[1], new Vector3(0, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
-        rocketParts_displayed_three = Instantiate(coiffe[2], new Vector3(1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_one = Instantiate(coiffe[0], new Vector3(-1.5f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_two = Instantiate(coiffe[1], new Vector3(0, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_three = Instantiate(coiffe[2], new Vector3(1.5f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
 
         // to set at least 1 stage
         isTankTurn = true;
@@ -59,9 +59,9 @@ public class PresentRocketParts : MonoBehaviour
         Destroy(rocketParts_displayed_two);
         Destroy(rocketParts_displayed_three); 
         
-        rocketParts_displayed_one = Instantiate(carburant[0], new Vector3(-1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
-        rocketParts_displayed_two = Instantiate(carburant[1], new Vector3(0f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
-        rocketParts_displayed_three = Instantiate(carburant[2], new Vector3(1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_one = Instantiate(carburant[0], new Vector3(-1.5f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_two = Instantiate(carburant[1], new Vector3(0f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_three = Instantiate(carburant[2], new Vector3(1.5f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
 
         isTankTurn = false;
         isEngineTurn = true;
@@ -73,9 +73,9 @@ public class PresentRocketParts : MonoBehaviour
         Destroy(rocketParts_displayed_two);
         Destroy(rocketParts_displayed_three);
 
-        rocketParts_displayed_one = Instantiate(moteur[0], new Vector3(-1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
-        rocketParts_displayed_two = Instantiate(moteur[1], new Vector3(0f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
-        rocketParts_displayed_three = Instantiate(moteur[2], new Vector3(1.2f, 6f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_one = Instantiate(moteur[0], new Vector3(-1.5f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_two = Instantiate(moteur[1], new Vector3(0f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
+        rocketParts_displayed_three = Instantiate(moteur[2], new Vector3(1.5f, 2f, 6f), Quaternion.Euler(0f, 0f, 0f));
         
         isEngineTurn = false;
     }

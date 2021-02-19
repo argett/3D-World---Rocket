@@ -1,5 +1,4 @@
-using System.Threading;
-using System.Collections.Generic;
+﻿using System.Threading;
 using UnityEngine;
 
 public class SelectObject : MonoBehaviour

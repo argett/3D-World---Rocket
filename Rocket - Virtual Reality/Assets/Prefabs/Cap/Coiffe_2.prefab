@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 23016823644601016}
   - component: {fileID: 23016823644601019}
   - component: {fileID: -6285258570751683280}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Coiffe_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

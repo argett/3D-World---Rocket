@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2723958196208405544}
   - component: {fileID: 7359839895032523191}
   - component: {fileID: 7989190654004927409}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Tank_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
