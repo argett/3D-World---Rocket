@@ -10,7 +10,7 @@ public class Launch_Camera : MonoBehaviour
     void Start()
     {
         rocket = GameObject.FindGameObjectsWithTag("Rocket")[0];
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectObject : MonoBehaviour
 {
@@ -13,11 +14,16 @@ public class SelectObject : MonoBehaviour
     private int carburant = 0;
     private GameObject hand;
 
+    private Scene scene;
+
     // Start is called before the first frame update
     void Start()
     {
         hand = this.transform.Find("FirstPersonCharacter").gameObject.transform.Find("Hand").gameObject; // Hand is a child of this
-        rocket_build = GameObject.FindGameObjectsWithTag("Rocket_pad")[0];
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "Rocket_lab")
+            rocket_build = GameObject.FindGameObjectsWithTag("Rocket_pad")[0];
+
         caracteristic_rocket_part = null;
     }
 
@@ -45,11 +51,6 @@ public class SelectObject : MonoBehaviour
                     {
                         checkButtonType(hit.collider);
                     }
-                    halo.transform.position = hit.collider.gameObject.transform.position;
-                    halo.SetActive(true);
-                }else if(hit.collider.gameObject.layer == 9)
-                {
-                    hit.collider.gameObject.GetComponent<Decolage>().decolage();
                 }
                 else if(collided.tag == "Winglet")
                 {
@@ -132,6 +133,9 @@ public class SelectObject : MonoBehaviour
                 break;
             case "Place_winglet":
                 obj.gameObject.GetComponent<Buttons>().Place_winglet();
+                break;
+            case "Launch_button":
+                obj.gameObject.GetComponent<Buttons>().Decollage(obj.gameObject);
                 break;
         }
     }

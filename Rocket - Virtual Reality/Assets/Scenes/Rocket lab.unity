@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d89a5f92f03449f2bd6c28c914115fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1933,7 +1933,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroy: {fileID: 1176341162}
   player: {fileID: 7539160315758250309, guid: bc397298a0c34694bbf2cefc9ad89ade, type: 3}
-  rocket: {fileID: 15390078}
 --- !u!4 &1176341165
 Transform:
   m_ObjectHideFlags: 0

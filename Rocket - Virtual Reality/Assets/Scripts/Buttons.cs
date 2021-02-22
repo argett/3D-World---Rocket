@@ -46,4 +46,10 @@ public class Buttons : MonoBehaviour
     {
         Instantiate(winglet, new Vector3(-10, 1.5f, 0), Quaternion.identity);
     }
+
+    public void Decollage(GameObject rocket)
+    {
+        Debug.Log(rocket.name);
+        rocket.GetComponent<Decolage>().decolage();
+    }
 }

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject dontDestroy;
 
     public GameObject player;
-    public GameObject rocket;
+    //public GameObject rocket;
 
 
     //private List<RocketPart> rocket;
