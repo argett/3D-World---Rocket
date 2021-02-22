@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Halo
+  - Rocket
+  - Button
+  - Rocket_pad
+  - Winglet
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - 
   - 
   - Rocket_parts
-  - 
-  - 
-  - 
+  - User_Interraction
+  - Selectionnable_objects
+  - Maybe_rocketPart
   - 
   - 
   - 

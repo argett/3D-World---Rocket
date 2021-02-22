@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject dontDestroy;
 
     public GameObject player;
-    public GameObject halo;
+    public GameObject rocket;
 
 
     //private List<RocketPart> rocket;
@@ -22,9 +22,7 @@ public class GameManager : MonoBehaviour
             Destroy(dontDestroy);         //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
 
 
-        Instantiate(player, new Vector3(0, 1, 2), Quaternion.identity);
-        Instantiate(halo, new Vector3(0, 0, 0), Quaternion.identity);
-
+        Instantiate(player, new Vector3(0, 5.1f, 0), Quaternion.identity);
     }
 
 
