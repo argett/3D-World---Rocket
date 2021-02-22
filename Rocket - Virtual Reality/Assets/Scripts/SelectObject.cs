@@ -10,6 +10,7 @@ public class SelectObject : MonoBehaviour
     private GameObject rocket_build;
     private GameObject caracteristic_rocket_part;
     private GameObject halo = null;
+    private int carburant = 0;
     private GameObject hand;
 
     // Start is called before the first frame update
@@ -44,6 +45,11 @@ public class SelectObject : MonoBehaviour
                     {
                         checkButtonType(hit.collider);
                     }
+                    halo.transform.position = hit.collider.gameObject.transform.position;
+                    halo.SetActive(true);
+                }else if(hit.collider.gameObject.layer == 9)
+                {
+                    hit.collider.gameObject.GetComponent<Decolage>().decolage();
                 }
                 else if(collided.tag == "Winglet")
                 {

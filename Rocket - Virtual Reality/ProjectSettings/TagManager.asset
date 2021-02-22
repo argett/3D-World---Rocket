@@ -9,6 +9,9 @@ TagManager:
   - Button
   - Rocket_pad
   - Winglet
+  - Fire
+  - Reactor
+  - Rocket
   layers:
   - Default
   - TransparentFX
