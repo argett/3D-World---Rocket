@@ -1,16 +1,16 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
 
 public class ChangeScene : MonoBehaviour
 {
-    public GameObject player;
-
+    private GameObject player;
     private GameObject rocket;
 
     // Start is called before the first frame update
     void Start()
     {
-        rocket = GameObject.FindGameObjectWithTag("Rocket");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -19,16 +19,33 @@ public class ChangeScene : MonoBehaviour
 
     }
 
-    public void load_rocket_lab()
-    {
-        SceneManager.LoadScene("Rocket lab");
-        Instantiate(player, new Vector3(0, 1, -2), Quaternion.identity);
-    }
-
     public void load_lunch_pad()
     {
-        SceneManager.LoadScene("Lunch pad");
-        Instantiate(player, new Vector3(0, 1, 2), Quaternion.identity);
-        Instantiate(rocket, new Vector3(0, 0, 0), Quaternion.identity);
+        rocket = GameObject.FindGameObjectWithTag("Rocket");
+        rocket.transform.position = new Vector3(10, rocket.GetComponent<Rocket>().getHeigth()-1f, 0f);
+        rocket.transform.parent = null;
+        StartCoroutine(LoadScene());
+    }
+
+
+    IEnumerator LoadScene()
+    {
+        // Set the current Scene to be able to unload it later
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // The Application loads the Scene in the background at the same time as the current Scene.
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Launch pad", LoadSceneMode.Additive);
+
+        // Wait until the last operation fully loads to return anything
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // Move the GameObjects (you attach this in the Inspector) to the newly loaded Scene
+        SceneManager.MoveGameObjectToScene(rocket, SceneManager.GetSceneByName("Launch pad"));
+        SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("Launch pad"));
+        // Unload the previous Scene
+        SceneManager.UnloadSceneAsync(currentScene);
     }
 }

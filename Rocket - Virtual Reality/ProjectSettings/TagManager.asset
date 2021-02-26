@@ -8,10 +8,17 @@ TagManager:
   - Rocket
   - Button
   - Rocket_pad
-  - Winglet
   - Fire
   - Reactor
   - Rocket
+  - First_floor
+  - Second_floor
+  - Third_floor
+  - Paint_ball
+  - Fuel_Input
+  - Fuel_Output
+  - Fuel_Pistol
+  - Fuel_Piedestal
   layers:
   - Default
   - TransparentFX
@@ -25,7 +32,7 @@ TagManager:
   - User_Interraction
   - Selectionnable_objects
   - Maybe_rocketPart
-  - 
+  - Reactor
   - 
   - 
   - 

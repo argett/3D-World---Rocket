@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour
 {
-    public GameObject winglet;
+    public GameObject output;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,18 +39,22 @@ public class Buttons : MonoBehaviour
 
     public void Goto_lunch_pad()
     {
-        GameObject gameHandler = GameObject.FindGameObjectWithTag("GameController");
-        gameHandler.GetComponent<ChangeScene>().load_lunch_pad();
-    }
-
-    public void Place_winglet()
-    {
-        Instantiate(winglet, new Vector3(-10, 1.5f, 0), Quaternion.identity);
+        GameObject rocket = GameObject.FindGameObjectsWithTag("Rocket")[0];
+        if (rocket.GetComponent<Rocket>().getFuelTransfered()>= 100 && rocket.GetComponent<Rocket>().getParts().Count %2 != 0 && rocket.GetComponent<Rocket>().getParts().Count != 1)
+        {
+            GameObject gameHandler = GameObject.FindGameObjectWithTag("GameController");
+            gameHandler.GetComponent<ChangeScene>().load_lunch_pad();
+        }
+        else
+        {
+            output.GetComponent<TextMesh>().text = "The rocket is not finished,\ndon't forget to fill the fuel\nand complete the rocket";
+            output.GetComponent<TextMesh>().color = Color.red;
+        }
+        
     }
 
     public void Decollage(GameObject rocket)
     {
-        Debug.Log(rocket.name);
-        rocket.GetComponent<Decolage>().decolage();
+        rocket.GetComponent<TakeOff>().takeOff();
     }
 }

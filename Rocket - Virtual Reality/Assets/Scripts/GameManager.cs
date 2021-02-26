@@ -6,12 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject dontDestroy;
-
     public GameObject player;
-    //public GameObject rocket;
 
-
-    //private List<RocketPart> rocket;
+    private GameObject rocket = null;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,17 +20,14 @@ public class GameManager : MonoBehaviour
 
 
         Instantiate(player, new Vector3(0, 5.1f, 0), Quaternion.identity);
+        if (rocket != null)
+            Instantiate(rocket, new Vector3(10, 2f, 0), Quaternion.identity);
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
